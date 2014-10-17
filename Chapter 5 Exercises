@@ -51,6 +51,7 @@ public class Morning extends JFrame
     morning.setVisible(true);
   }
 }  
+
     b. 
 package Chapter5;
 
@@ -95,4 +96,62 @@ public class Morning extends JFrame implements ActionListener
 	    rooster.play();
   }
 }  
+
+    c.
+package Chapter5;
+
+import java.awt.*;
+import java.awt.event.*;
+
+import javax.swing.*;
+
+public class Morning extends JFrame implements ActionListener
+{
+  private EasySound rooster;
+  private EasySound cow;
+  /**
+   *   Constructor
+   */
+  private int time;
+  
+  public Morning()
+  {
+	
+    super("Morning");
+    cow = new EasySound("moo.wav");
+    rooster = new EasySound("roost.wav"); //error: missing quotations
+    rooster.play();
+    time = 0;
+	   Timer clock = new Timer(5000, this); 
+	   clock.start();
+    Container c = getContentPane();
+
+    c.setBackground(Color.WHITE);
+  }
+
+  public static void main(String[] args)
+  {
+    Morning morning = new Morning(); //error: missing parentheses 
+    morning.setSize(300, 150);
+    morning.setDefaultCloseOperation(EXIT_ON_CLOSE);
+    morning.setVisible(true);
+  }
+    
+  public void actionPerformed(ActionEvent e)
+	  {
+	    time++;
+	    if (time % 2 == 0){
+	    	rooster.play();
+	    	Container c = getContentPane();
+	    	c.setBackground(Color.WHITE);
+	    }
+	    else{
+	    	cow.play();
+	    	Container c = getContentPane();
+	    	c.setBackground(Color.BLACK);
+	    }
+	    	
+  }
+}  
+
 
