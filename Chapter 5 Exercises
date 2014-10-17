@@ -1,0 +1,51 @@
+6.	Produces an error: “java.lang.NoSuchMethodError: main”
+
+7.	Parentheses are required by syntax, braces are for style.
+
+8.	There is no syntax error. The semi-colon finishes the statement so even under the right conditions c.getWidth() does not occur.
+
+9.	Public Boolean badIndentation(int maxLines){
+      Int lineCount = 3;
+      While (lineCount < maxLines){
+	      System.out.println(lineCount);
+	      lineCount++;
+      }
+		  return true;
+    }
+
+11. a. No title on the window. 
+    b. It compiles, but nothing shows up. This is because void makes the constructor into a method. Without a constructor, the items in the window are not defined.
+    
+12. a. 
+package Chapter5;
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class Morning extends JFrame
+{
+  private EasySound rooster;
+
+  /**
+   *   Constructor
+   */
+  public Morning()
+  {
+    super("Morning");
+    rooster = new EasySound("roost.wav"); //error: missing quotations
+    rooster.play();
+
+    Container c = getContentPane();
+    c.setBackground(Color.WHITE); //error: missing t
+  }
+
+  public static void main(String[] args)
+  {
+    Morning morning = new Morning(); //error: missing parentheses 
+    morning.setSize(300, 150);
+    morning.setDefaultCloseOperation(EXIT_ON_CLOSE);
+    morning.setVisible(true);
+  }
+}  
+    b. 
