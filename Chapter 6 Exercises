@@ -6,7 +6,7 @@
 
 
 7. a. 105
-   b .19
+   b. 19
 
 
 8. count += (total/pages - 5) * words - 1;
