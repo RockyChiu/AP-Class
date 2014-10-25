@@ -1,9 +1,11 @@
 13. given positive integer n:
     (n-n%100) + (n%10)*10 + (n/10)%10
+    will swap the tens and ones digit
 
 
 14. given value of day:
-    (day%7) - 1
+    (day - 1) % 7
+    will give back the day of the week
     
 
 15. int waitingTime = (depHour*60 + depMin) - (curHour*60 + curMin);
