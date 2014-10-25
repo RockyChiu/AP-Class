@@ -1,0 +1,11 @@
+13. given positive integer n:
+    (n-n%100) + (n%10)*10 + (n/10)%10
+
+
+14. given value of day:
+    (day%7) - 1
+    
+
+15. int waitingTime = (depHour*60 + depMin) - (curHour*60 + curMin);
+    System.out.println((waitingTime%60) + "hours and" + (waitingTime - (waitingTime%60)*60) + "minutes.");
+    
