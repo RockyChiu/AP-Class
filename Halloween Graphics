@@ -1,0 +1,92 @@
+package Chapter5;
+
+/* This applet displays a message moving horizontally
+across the screen. */
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class Banner extends JApplet
+implements ActionListener
+{
+private int xPos, yPos;  // hold the coordinates of the banner
+
+public void init()
+{
+ Container c = getContentPane();
+ c.setBackground(Color.black);
+ xPos = c.getWidth();
+ yPos = c.getHeight() / 2;
+ Timer clock = new Timer(30, this);  // fires every 30 milliseconds
+ clock.start();
+}
+
+// Called automatically after a repaint request
+public void paint(Graphics g)
+{
+ super.paint(g);
+ g.setColor(Color.white);
+ g.drawString("   ____   ", xPos, yPos);
+ g.drawString("  ( O o )  ", xPos, yPos + 12);
+ g.drawString("  /    0  \\", xPos, yPos + 24);
+ g.drawString(" /           \\", xPos,  yPos + 36);
+ g.drawString(" ~~~~~~ ", xPos, yPos + 48);
+ g.setColor(Color.white);
+ g.drawString("   ____   ", xPos, yPos + 200);
+ g.drawString("  ( O o )  ", xPos, yPos + 212);
+ g.drawString("  /    0  \\", xPos, yPos + 224);
+ g.drawString(" /           \\", xPos,  yPos + 236);
+ g.drawString(" ~~~~~~ ", xPos, yPos + 248);
+ g.drawString("TRICK OR TREAT", xPos, yPos - 100);
+ g.setColor(Color.orange);
+ int xpoints[]={200, 185, 125, 110};
+ int ypoints[]={200, 150, 150, 200};
+ int npoints = 4;
+ g.fillPolygon(xpoints, ypoints, npoints);
+ g.setColor(Color.white);
+ int x2points[]={185, 170, 140, 125};
+ int y2points[]={150, 100, 100, 150};
+ int n2points = 4;
+ g.fillPolygon(x2points, y2points, n2points);
+ g.setColor(Color.yellow);
+ int x3points[]={170, 155, 155, 140};
+ int y3points[]={100, 50, 50, 100};
+ int n3points = 4;
+ g.fillPolygon(x3points, y3points, n3points);
+ g.setColor(Color.orange);
+ g.fillOval(200, 400, 25, 50);
+ g.fillOval(185, 400, 25, 50);
+ g.fillOval(170, 400, 25, 50);
+ g.fillOval(155, 400, 25, 50);
+ g.setColor(Color.green);
+ int x4points[]={200, 190, 180};
+ int y4points[]={400, 385, 400};
+ int n4points = 3;
+ g.fillPolygon(x4points, y4points, n4points);
+ g.drawString("TRICK OR TREAT", xPos, yPos - 100);
+ g.setXORMode(Color.orange);
+ 
+}
+
+// Called automatically when the timer fires
+public void actionPerformed(ActionEvent e)
+{
+ Container c = getContentPane();
+
+ // Adjust the horizontal position of the banner:
+ xPos--;
+ if (xPos < -100)
+ {
+   xPos = c.getWidth();
+ }
+
+ // Set the vertical position of the banner:
+ yPos = c.getHeight() / 2;
+
+ repaint();
+}
+}
+
+
+-worked on with Whit Lippincott
