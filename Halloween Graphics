@@ -10,14 +10,17 @@ import javax.swing.*;
 public class Banner extends JApplet
 implements ActionListener
 {
-private int xPos, yPos;  // hold the coordinates of the banner
+private int xPos, yPos, time;  // hold the coordinates of the banner
+
 
 public void init()
 {
  Container c = getContentPane();
  c.setBackground(Color.black);
+ setSize(1200,900);
  xPos = c.getWidth();
  yPos = c.getHeight() / 2;
+ time = 5;
  Timer clock = new Timer(30, this);  // fires every 30 milliseconds
  clock.start();
 }
@@ -25,6 +28,7 @@ public void init()
 // Called automatically after a repaint request
 public void paint(Graphics g)
 {
+ if(time % 5 == 0){
  super.paint(g);
  g.setColor(Color.white);
  g.drawString("   ____   ", xPos, yPos);
@@ -50,7 +54,7 @@ public void paint(Graphics g)
  int n2points = 4;
  g.fillPolygon(x2points, y2points, n2points);
  g.setColor(Color.yellow);
- int x3points[]={170, 155, 155, 140};
+ int x3points[]={170, 160, 150, 140};
  int y3points[]={100, 50, 50, 100};
  int n3points = 4;
  g.fillPolygon(x3points, y3points, n3points);
@@ -64,15 +68,26 @@ public void paint(Graphics g)
  int y4points[]={400, 385, 400};
  int n4points = 3;
  g.fillPolygon(x4points, y4points, n4points);
+ g.setColor(Color.white);
  g.drawString("TRICK OR TREAT", xPos, yPos - 100);
- g.setXORMode(Color.orange);
+ }
+ if(time % 10 == 0){
+	 g.setColor(Color.orange);
+	 g.drawString("TRICK OR TREAT", xPos, yPos - 100);
+ }
+	 
+ }
  
-}
+ 
+
 
 // Called automatically when the timer fires
 public void actionPerformed(ActionEvent e)
 {
+ time++;
+ 
  Container c = getContentPane();
+ 
 
  // Adjust the horizontal position of the banner:
  xPos--;
@@ -89,4 +104,3 @@ public void actionPerformed(ActionEvent e)
 }
 
 
--worked on with Whit Lippincott
