@@ -1,0 +1,74 @@
+4. public double totalWages(double hours, double rate){
+    double wages;
+    if(hours > 40){
+     wages = (hours-40)(1.5*rate)+(rate*hours)
+    }
+    else{
+     wages = rate * hours
+    }
+  }
+
+
+14. if (100 - avg < 11)
+     grade = 'A'
+  else if (100 - avg < 21)
+     grade = 'B'
+  else if (100 - avg < 31)
+     grade = 'C'
+  else if (100 - avg < 41)
+     grade = 'D'
+  else
+     grade = 'F'
+     
+
+16. public static double getOrderTotal(int bp, int nb){
+     double total;
+     if (bp + nb < 3){
+      total = bp * 18.95 + nb * 21.95;
+     }
+     else if (bp + nb < 12){
+      total = 15.95*(bp + nb);
+    } 
+     else{
+      total = 14.00*(bp + nb);
+     }
+     system.out.println(total);
+    }
+    
+    
+16. b. 
+import java.util.Scanner;
+
+public class OrderTotal {
+	
+	private static Scanner userInput;
+
+	public static double getOrderTotal(){
+		 int bp, nb;
+		 userInput = new Scanner(System.in);
+		 System.out.print("Enter how many copies of Be Prepared:");
+		 bp = userInput.nextInt();
+		 System.out.print("Enter how many copies of Next Best:");
+		 nb = userInput.nextInt();
+		 
+	     double total;
+	     if (bp + nb < 3){
+	      total = bp * 18.95 + nb * 21.95;
+	     }
+	     else if (bp + nb < 12){
+	      total = 15.95*(bp + nb);
+	     }
+	     else{
+	      total = 14.00*(bp + nb);
+	     }
+	     System.out.println(total);
+	     return total;
+	     
+	    }
+	
+
+		
+		
+	}
+
+      
