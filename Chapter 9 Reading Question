@@ -1,0 +1,4 @@
+Difference between a normal class and a test class:
+
+
+A normal class defines a program, it gives constructors and/or methods. A test class on the other hand is simply designed to run the code of the normal class. It usually uses a main function, and can output values that the normal class returns. It does not define any of the program, and is considered separate, not needed for the normal class to compile.
