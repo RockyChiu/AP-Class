@@ -1,0 +1,27 @@
+package Eggspiration;
+
+import java.util.Scanner;
+
+public class Eggspiration {
+	public static int date(){
+		
+		int expirationDate;
+		int currentDate;
+		int daysToExpiration;
+		
+		Scanner in = new Scanner(System.in);
+		System.out.println("Enter the 3 digit code on the egg carton:");
+		expirationDate = in.nextInt();
+		
+		System.out.println("Enter the current Julian date:");
+		currentDate = in.nextInt();
+		
+		daysToExpiration = 60 - (currentDate - expirationDate);
+		
+		return daysToExpiration;
+	}
+	
+	public static void main(String[] args){
+		System.out.println(Eggspiration.date());
+	}
+}
